@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+:root {
+  --primary: #efb6b2;
+  --secondary: #4e4e4e;
+  --error: #ff4a4a;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* base styles & title */
+body {
+  font-family: "Noto Serif";
+  color: var(--secondary);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.title {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+.title h1 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.title h2,
+.title p {
+  text-align: center;
+}
+.title h2 {
+  margin-top: 60px;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+.user-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  cursor: pointer;
+  position: fixed;
+  right: 4rem;
+  top: 1rem;
+}
+
+.mainPage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.mainTitleContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.mainTitleWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainTitleContainer h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  border: 1px solid white;
+  padding: 1rem 3rem;
+  color: #fff;
+  text-align: center;
+  width: fit-content;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: all 250ms ease-in-out;
+}
+.btn:hover {
+  border: 1px solid rgb(58, 58, 58);
+  color: rgb(58, 58, 58);
+}
+
+.mainPage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pageContainer {
+  width: 90%;
+  margin: auto;
+  min-height: 100vh;
+}
+
+/* upload form styles */
+form {
+  margin: 30px auto 10px;
+  text-align: center;
+}
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+label:hover {
+  background: var(--primary);
+  color: white;
+}
+.output {
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error {
+  color: var(--error);
+}
+
+/* progress bar styles */
+.progress-bar {
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+
+/* image grid styles */
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* modal styles */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form-wrapper form {
+  position: fixed;
+  right: 2rem;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #4e4e4ea2;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 100;
+}
+.loginFormInput {
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.submit {
+  color: var(--secondary);
+  background: var(--primary);
+  border: none;
+  padding: 0.4rem 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.backdrop img {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+}
+
+.footer {
+  background: var(--secondary);
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.footer svg,
+.footer p {
+  color: #919191;
+}
+
+@media (max-width: 992px) {
+  .img-grid {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .backdrop img {
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    margin: 60px auto;
+  }
+  .mainTitleWrapper {
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .user-icon {
+    right: 2rem;
+  }
+}
